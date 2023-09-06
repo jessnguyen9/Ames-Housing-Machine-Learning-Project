@@ -95,4 +95,23 @@ Residuals on the gradient boost model were:
 
 The model is dominated by features related to size and quality
 
+|index|Feature Names|Feature Importances|
+|---|---|
+|Overall Qual|0\.39272483495402866|
+|Total SF|0\.3568763700410612|
+|Year Built|0\.045396744133224295|
+|Year Remod/Add|0\.022098346479286855|
+|Gr Liv Area|0\.0193034148646336|
+|Kitchen Qual\_TA|0\.017791286766306636|
+|Garage Cars|0\.016039563131456474|
+|BsmtFin SF 1|0\.012385942230966514|
+|Garage Area|0\.011932867284658226|
+|Lot Area|0\.011541017959086157|
+|Fireplaces|0\.009578511945560421|
+|Overall Cond|0\.007511069312884516|
+||Kitchen Qual\_Gd|0\.006048403740001757|
+|Central Air\_Y|0\.0040168705378818|
+
+Additionally, we re-ran the model with CatBoost to use with model inferencing, and CatBoost gives us the following importances:
+
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/87e83e14-2b1e-46a8-ba84-cb8b3da45fd2)
