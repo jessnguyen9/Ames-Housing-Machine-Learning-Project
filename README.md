@@ -27,6 +27,9 @@ The data were cleaned and hosted on AWS S3 in a public bucket.
 #### Tableau Visualizations
 
 https://public.tableau.com/app/profile/mary.hills/viz/AmesAmenitiesComparison/AmenitesComparison
+https://public.tableau.com/app/profile/mary.hills/viz/AmesAmenitiesComparison/AmenitesComparison
+![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/8b07e328-482d-4c5c-badd-fb4de228204a)
+
 
 #### Features: Correlations & Clustering
 
