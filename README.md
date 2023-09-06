@@ -95,7 +95,7 @@ Residuals on the gradient boost model were:
 
 The model is dominated by features related to size and quality
 
-|index|Feature Names|Feature Importances|
+|Feature Names|Feature Importances|
 |---|---|
 |Overall Qual|0\.39272483495402866|
 |Total SF|0\.3568763700410612|
@@ -109,8 +109,6 @@ The model is dominated by features related to size and quality
 |Lot Area|0\.011541017959086157|
 |Fireplaces|0\.009578511945560421|
 |Overall Cond|0\.007511069312884516|
-||Kitchen Qual\_Gd|0\.006048403740001757|
-|Central Air\_Y|0\.0040168705378818|
 
 Additionally, we re-ran the model with CatBoost to use with model inferencing, and CatBoost gives us the following importances:
 
