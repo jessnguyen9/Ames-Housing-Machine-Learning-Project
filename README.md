@@ -3,14 +3,24 @@
 ## Overview
 
 This repo containst the following:
-* x
-* x
-* x
+* /data folder contains data
+* /graphs and plots folder contains screenshots of our graphs, which are also represented in part below
+* notebooks:
+  * K-Means clustering and plots.pynb is the clustering
+  * Ames_Modeling.ipynb is the model development notebookt, on Google Colab
+  * best_model.pkl is the saved final model
 
 #### Data
 We used the public Ames Housing dataset. This dataset is available on Kaggle and other places around the web.
+The data were cleaned and hosted on AWS S3 in a public bucket.
 
 #### Methods
+
+* Jupyter Notebook: modeling and clustering in Python
+* Tableau: data visualization analysis
+* AWS: hosting data
+* Python + Flask: app development
+* HTML, CSS, JS: webpage & user inputs
 
 ## Data Analysis
 
@@ -19,7 +29,6 @@ We used the public Ames Housing dataset. This dataset is available on Kaggle and
 https://public.tableau.com/app/profile/mary.hills/viz/AmesAmenitiesComparison/AmenitesComparison
 
 #### Features: Correlations & Clustering
-
 
 ##### Related Features
 
@@ -69,7 +78,6 @@ Residuals on the model were thus:
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/3d3991b7-f9a5-4ba6-a77d-6c0e096e8d79)
 
 
-
 Gradient boosting slightly improved the results. We used cross-validation to determine the best hyperparamters.
 
 * Training R-Squared: 0.9676501961674518
@@ -82,18 +90,6 @@ Residuals on the gradient boost model were:
 
 #### Feature Importances
 
-The model is dominated by home overall quality and total squarefootage
+The model is dominated by features related to size and quality
 
-|index|Feature Names|Feature Importances|
-|---|---|---|
-|5|Overall Qual|0\.39272483495402866|
-|39|Total SF|0\.3568763700410612|
-|7|Year Built|0\.045396744133224295|
-|8|Year Remod/Add|0\.022098346479286855|
-|17|Gr Liv Area|0\.0193034148646336|
-|249|Kitchen Qual\_TA|0\.017791286766306636|
-|27|Garage Cars|0\.016039563131456474|
-|10|BsmtFin SF 1|0\.012385942230966514|
-|28|Garage Area|0\.011932867284658226|
-|4|Lot Area|0\.011541017959086157|
-
+![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/87e83e14-2b1e-46a8-ba84-cb8b3da45fd2)
