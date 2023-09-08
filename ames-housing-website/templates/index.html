@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ames, IA Housing Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header-section">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='CityAmes_Logo_rgb.png') }}"> 
+        </div>
+
+        <div class="pic" >
+            <img src="{{ url_for('static', filename='ames_ia_university.png') }}"> 
+        </div>
+    </div>  
+    
+    <div class="content-section">
+        <div class="predictor-section">
+            <h1>Listing Price Predictor</h1>
+            <form action="/predict" method="post" id="prediction-form">
+                <label for="lot_area">Lot Area:</label>
+                <input type="text" id="lot_area" name="lot_area" value="{{ lot_area | default('') }}">Sq Ft<br><br>
+                
+                <label for="overall_qual">Overall Quality:</label>
+                <select id="overall_qual" name="overall_qual">
+                    {% for overall_qual in overall_qual%}
+                    <option value="{{ overall_qual }}">{{ overall_qual}}</option>
+                    {% endfor %}
+                </select><br><br>
+
+                <label for="house_style">Housing Style:</label>
+                <select id="house_style" name="house_style">
+                    {% for house_style in house_style %}
+                    <option value="{{ house_style }}">{{ house_style }}</option>
+                    {% endfor %}
+                </select><br><br>
+                
+                <label for="year_built">Year Built:</label>
+                <input type="text" id="year_built" name="year_built" value="{{ year_built | default('') }}"><br><br>
+                
+                <label for="remodel">Remodel:</label>
+                <select id="remodel" name="remodel">
+                    {% for remodel in remodel %}
+                    <option value="{{ remodel }}">{{ remodel }}</option>
+                    {% endfor %}
+                </select><br><br>
+                
+                <label for="total_sqr_ft">Square Feet of Home:</label>
+                <input type="text" id="total_sqr_ft" name="total_sqr_ft" value="{{ total_sqr_ft | default('') }}"><br><br>
+                
+                <label for="neighborhood">Neighborhood:</label>
+                <select id="neighborhood" name="neighborhood">
+                    {% for neighborhood in neighborhood %}
+                    <option value="{{ neighborhood }}">{{ neighborhood }}</option>
+                    {% endfor %}
+                </select><br><br>
+                
+                <label for="central_air">Central Air:</label>
+                <select id="central_air" name="central_air">
+                    {% for central_air in central_air %}
+                    <option value="{{ central_air }}">{{ central_air }}</option>
+                    {% endfor %}
+                </select><br><br>
+                
+                <label for="total_rooms">Total Rooms:</label>
+                <input type="text" id="total_rooms" name="total_rooms" value="{{ total_rooms | default('') }}"><br><br>
+                
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="text" id="bedrooms" name="bedrooms" value="{{ bedrooms | default('') }}"><br><br>
+                
+                <label for="bath">Bathrooms:</label>
+                <input type="text" id="bath" name="bath" value="{{ bath | default('') }}"><br><br>
+                
+                <label for="car_garage">Garage (Number of Cars):</label>
+                <input type="text" id="car_garage" name="car_garage" value="{{ car_garage | default('') }}"><br><br>
+                
+                <div class="button-section">
+                    <button type="submit">Predict</button>
+                </div>
+            </form>
+            <form action="/" method="get">
+                <div class="button-section">
+                    <button type="submit">Reset</button>
+                </div>
+            </form> 
+            <div class="results-section">
+            {% if predicted_price is not none %}
+            <h2>Predicted Price: ${{ predicted_price|default('N/A')|float|round(2) }}</h2>
+            <p>House Details:</p>
+            <ul>
+                <li><strong>Overall Quality</strong>{{ user_input.overall_qual }}</li>
+                <li><strong>Lot Area:</strong> {{ user_input.lot_area }}</li>
+                <li><strong>Housing Style:</strong> {{ user_input.housing_style }}</li>
+                <li><strong>Year Built:</strong> {{ user_input.year_built }}</li>
+                <li><strong>Remodel:</strong> {{ user_input.remodel }}</li>
+                <li><strong>Neighborhood:</strong> {{ user_input.neighborhood }}</li>
+                <li><strong>Central Air:</strong> {{ user_input.central_air }}</li>
+            </ul>
+            {% endif %}
+            </div>
+        </div>
+        <div class="tableau-section">
+            
+            <div class="tableau-container">
+                <!-- Tableau Embed Code 1 -->
+                <div class='tableau-visual-1' id='viz1693966024825' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Price Per Neighborhood' src='https://public.tableau.com/static/images/Am/AmesHousingData_16929331848960/PricePerNeighborhood/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='AmesHousingData_16929331848960/PricePerNeighborhood' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Am/AmesHousingData_16929331848960/PricePerNeighborhood/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                    <script type='text/javascript'>
+                        var divElement = document.getElementById('viz1693966024825');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        if (divElement.offsetWidth > 800) {
+                            vizElement.style.minWidth='420px';
+                            vizElement.style.maxWidth='950px';
+                            vizElement.style.width='100%';
+                            vizElement.style.minHeight='587px';
+                            vizElement.style.maxHeight='887px';
+                            vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                        } else if (divElement.offsetWidth > 500) {
+                            vizElement.style.minWidth='420px';
+                            vizElement.style.maxWidth='950px';
+                            vizElement.style.width='100%';
+                            vizElement.style.minHeight='587px';
+                            vizElement.style.maxHeight='887px';
+                            vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                        } else {
+                            vizElement.style.width='100%';
+                            vizElement.style.height='727px';
+                        }
+                        var scriptElement = document.createElement('script');
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    </script>
+                </div>
+                
+                <!-- Tableau Embed Code 2 -->
+                <div class='tableau-visual-2' id='viz1693966169725' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Similar Homes/Neighborhood' src='https://public.tableau.com/static/images/Am/AmesHousingData_16929331848960/SimilarHomesNeighborhood/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='AmesHousingData_16929331848960/SimilarHomesNeighborhood' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Am/AmesHousingData_16929331848960/SimilarHomesNeighborhood/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1693966169725');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if (divElement.offsetWidth > 800) {
+                        vizElement.style.minWidth='420px';
+                        vizElement.style.maxWidth='950px';
+                        vizElement.style.width='100%';
+                        vizElement.style.minHeight='587px';
+                        vizElement.style.maxHeight='887px';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    } else if (divElement.offsetWidth > 500) {
+                        vizElement.style.minWidth='420px';
+                        vizElement.style.maxWidth='950px';
+                        vizElement.style.width='100%';
+                        vizElement.style.minHeight='587px';
+                        vizElement.style.maxHeight='887px';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    } else {
+                        vizElement.style.width='100%';
+                        vizElement.style.height='727px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                
+                </div>
+                
+                <!-- Tableau Embed Code 3 -->
+                <div class='tableau-visual-3' id='viz1693966247388' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Prices By Month' src='https://public.tableau.com/static/images/Am/AmesHousingData_16929331848960/PricesByMonth/1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='AmesHousingData_16929331848960/PricesByMonth' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Am/AmesHousingData_16929331848960/PricesByMonth/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1693966247388');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if (divElement.offsetWidth > 800) {
+                        vizElement.style.minWidth='420px';
+                        vizElement.style.maxWidth='1050px';
+                        vizElement.style.width='100%';
+                        vizElement.style.minHeight='587px';
+                        vizElement.style.maxHeight='887px';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    } else if (divElement.offsetWidth > 500) {
+                        vizElement.style.minWidth='420px';
+                        vizElement.style.maxWidth='1050px';
+                        vizElement.style.width='100%';
+                        vizElement.style.minHeight='587px';
+                        vizElement.style.maxHeight='887px';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    } else {
+                        vizElement.style.width='100%';
+                        vizElement.style.height='727px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                
+                </div>
+            </div>
+            <div class="controls">
+                <button id="prevVisual">←</button>
+                <button id="nextVisual">→</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentVisual = 1;
+            const numVisuals = 3;
+            
+            // Function to show the current visual
+            function showVisual() {
+                // Hide all visuals first
+                document.querySelectorAll('.tableau-visual-1, .tableau-visual-2, .tableau-visual-3').forEach(function(visual) {
+                    visual.style.display = 'none';
+                });
+
+                // Show the selected visual if it exists
+                const selectedVisual = document.querySelector('.tableau-visual-' + currentVisual);
+                if (selectedVisual) {
+                    selectedVisual.style.display = 'block';
+                }
+            }
+                    
+            // Event handler for next visual button
+            document.getElementById('nextVisual').addEventListener('click', function() {
+                currentVisual = (currentVisual % numVisuals) + 1;
+                showVisual();
+            });
+
+            // Event handler for previous visual button
+            document.getElementById('prevVisual').addEventListener('click', function() {
+                currentVisual = (currentVisual - 2 + numVisuals) % numVisuals + 1;
+                showVisual();
+            });
+
+            // Initially, show the first visual
+            showVisual();
+        });
+    </script>
+       
+  
+</body>
+</html>

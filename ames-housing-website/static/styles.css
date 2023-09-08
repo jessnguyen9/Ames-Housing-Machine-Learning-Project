@@ -1,0 +1,95 @@
+/* Add your custom styles here */
+body {
+    margin: 20px; /* Reset default margin */
+    padding: 20px; /* Reset default padding */
+    background-color: hsl(210, 100%, 70%);
+    z-index: -1;
+}
+
+/* Style for the header-section */
+.header-section {
+    display: flex; /* Use flexbox for side-by-side alignment */
+    align-items: center; /* Center vertically */
+    justify-content: space-around;
+    background-color: #ADD8E6; /* Set a background color */
+    border: 5px solid #6495ED;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.header-content {
+    display: center;
+    align-items: left;
+}
+
+/* Style for the logo */
+.logo img {
+    max-height: 50%;
+    max-width: 50%;
+}
+
+.pic img {
+    max-height: 100%; /* Adjust the height of the logo */
+    max-width: 100%;
+}
+
+.content-section {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Wrap items when the screen size is small */
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    border: 5px solid #6495ED;
+    border-radius: 5px;
+}
+
+/* Style for the predictor-section */
+.predictor-section {
+    flex: 1; /* Grow to take available space */
+    margin-top: 10px;
+    padding: 10px;
+    max-width: 100%;
+    background-color: white;
+}
+
+/* Style for the button-section */
+.button-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Style for the results-section */
+.results-section {
+    flex: 1; /* Grow to take available space */
+    margin-top: 10px;
+    padding: 10px;
+    border: 5px solid #6495ED;
+    border-radius: 5px;
+    max-width: 100%;
+    background-color: white;
+}
+
+.tableau-container {
+    flex: 1; /* Grow to take available space */
+    margin-top: 10px;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: white;
+}
+
+/* Style for the tableau-section */
+.tableau-section {
+    flex: 1; /* Grow to take available space */
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background-color: white;
+}
+
+/* Remove the hover effect */
+.tableau-section .tableau-visual {
+    display: inline-block;
+    width: 100%;
+}
