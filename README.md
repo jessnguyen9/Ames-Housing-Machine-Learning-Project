@@ -108,7 +108,7 @@ Residuals on the gradient boost model were:
 
 ### Feature Importances
 
-The model is dominated by features related to size and quality
+The model identifies key factors influencing house prices, with size and quality emerging as the most significant predictors. The table above shows the relative importance of different features in determining the sale price of a home.
 
 |Feature Names|Feature Importances|
 |---|---|
@@ -119,11 +119,17 @@ The model is dominated by features related to size and quality
 |Ground Living Area|0\.0193034148646336|
 |Kitchen Quality\_TA|0\.017791286766306636|
 |Garage Cars|0\.016039563131456474|
-|BsmtFin Square Footage 1|0\.012385942230966514|
+|BsmtFin Square Footage|0\.012385942230966514|
 |Garage Area|0\.011932867284658226|
 |Lot Area|0\.011541017959086157|
 |Fireplaces|0\.009578511945560421|
 |Overall Condition|0\.007511069312884516|
+
+- **Overall Quality (0.39):** The most influential factor in pricing, this variable measures the overall materials and finish of the house. Higher quality scores significantly increase home values.
+
+- **Total Square Footage (0.36):** Homes with larger living areas tend to have higher prices, making total square footage a crucial predictor.
+
+- **Year Built (0.045) & Year Remodeled/Added (0.022):** Newer homes or those with recent renovations typically sell for more, reflecting modern design standards and maintained structural integrity.
 
 Additionally, we re-ran the model with CatBoost to use with model inferencing, and CatBoost gives us the following importances:
 
