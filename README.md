@@ -1,19 +1,28 @@
 # Ames Housing - A Price Prediction Model With Machine Learning
 
 ## Overview
+Conducted a comprehensive analysis using the Ames Housing dataset to develop a machine learning model for predicting house prices. The project involved data acquisition, preparation, analysis, and visualization. Using SQL, Python, and machine learning techniques, we built predictive models and surfaced insights into housing trends and key price determinants. A dashboard in Tableau was also created to visualize trends related to housing attributes, neighborhoods, and pricing patterns.
 
 This repo containst the following:
-* /data folder contains data
-* /graphs and plots folder contains screenshots of our graphs, which are also represented in part below
+* data folder: contains the dataset used for modeling
+* graphs and plots folder: contains screenshots of our graphs, which are also represented in part below
 * notebooks:
-  * K-Means clustering and plots.pynb is the clustering
-  * Ames_Modeling.ipynb is the model development notebookt, on Google Colab
-  * best_model.pkl is the saved final model
+  * K-Means clustering and plots.ipynb: Clustering analysis
+  * Ames_Modeling.ipynb: Model development and evaluation (Google Colab)
+  * best_model.pkl: Saved final model
 
-#### Data
+## Data Acquisition
 We used the public Ames Housing dataset. This dataset is available on Kaggle and other places around the web.
 The data were cleaned and hosted on AWS S3 in a public bucket.
 
+## Data Preparation
+Cleaning: Removed missing values and incomplete records.
+
+Transformation: Converted categorical variables into numerical formats for modeling.
+
+Feature Engineering: Created new features based on existing data to improve model accuracy.
+
+Clustering: Applied K-Means clustering to segment housing data into meaningful groups.
 #### Methods
 
 * Jupyter Notebook: modeling and clustering in Python
