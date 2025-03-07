@@ -55,11 +55,39 @@ Our sale price target variable strongly correlates to features related to home s
 
 ![correlation_heatmap_plot](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/74d74d67-7b1b-4757-a3b0-b0ae434b3cb1)
 
-#### Clustering: Cluster Count
+#### Clustering: Identifying Housing Market Segments
 
-We created a k-means elbow curve to find the "right" number of clusters to use in our analysis
+We used the elbow method to determine the ideal number of clusters. The plot of inertia values against cluster counts helped identify the optimal grouping, reducing within-cluster variance while maintaining simplicity.
 
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/d8fa5e81-b507-4c6e-97a2-45f3dfb8368a)
+
+**Cluster Analysis**
+
+We segmented houses into three distinct clusters based on key characteristics:
+
+**Cluster 0 (Low-Priced Homes - Avg. Price: $130,430)**
+
+- Older properties with lower overall quality.
+
+- Smaller living spaces, fewer rooms, and fewer garage spaces.
+
+- Represents budget-friendly or starter homes.
+
+**Cluster 1 (High-Priced Homes - Avg. Price: $374,450)**
+
+- Newer constructions with high overall quality.
+
+- Large living areas, multiple rooms, and spacious garages.
+
+- Represents premium, spacious homes.
+
+**Cluster 2 (Moderate-Priced Homes - Avg. Price: $218,795)**
+
+- Good quality, moderately aged homes.
+
+- Balanced number of rooms, average garage space, and a larger lot area.
+
+- Appeals to those looking for a balance between affordability and features.
 
 #### Features that matter
 
