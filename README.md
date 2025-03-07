@@ -93,7 +93,9 @@ Linear regression provides a simple, interpretable approach to understanding the
 * Testing R-Squared: 0.9397
 * Mean Squared Error: 0.0695
 
-Residual Analysis: Residuals represent the difference between actual and predicted sale prices. A residual plot helps verify model assumptions and identify potential areas for improvement.
+These results indicate that the linear regression model explains about 94% of the variance in home prices, making it a strong baseline predictor. However, there were some residual errors, indicating room for improvement.
+
+Residual Analysis: Residuals (differences between predicted and actual values) should ideally be randomly distributed. The plot below shows some patterns, suggesting that a more complex model might improve accuracy.
 
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/3d3991b7-f9a5-4ba6-a77d-6c0e096e8d79)
 
@@ -105,7 +107,7 @@ Gradient boosting slightly improved the results. We used cross-validation to det
 * Testing R-Squared: 0.9501703258657423
 * Mean Squared Error: 0.05743137013095087
 
-Residuals for the Gradient Boosting model indicate improved accuracy over the linear regression model.
+Compared to linear regression, this model slightly increased predictive power and reduced error, making it more reliable for estimating home prices.
 
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/8a3f9b03-0f9f-44ee-a5a5-6c8cc441e5ac)
 
@@ -139,18 +141,18 @@ Additionally, we re-ran the model with CatBoost to use with model inferencing, a
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/87e83e14-2b1e-46a8-ba84-cb8b3da45fd2)
 
 ## Challenges
-- Handling missing data without introducing bias.
+- Handling missing values and inconsistent data formats required significant preprocessing.
 
-- Selecting the best features while avoiding multicollinearity.
+- Balancing model complexity while maintaining interpretability.
 
 - Optimizing model performance without overfitting.
 
 ## Future Improvements
-- Implementing more advanced models like XGBoost for better accuracy.
+- Incorporating additional housing market trends and economic indicators.
 
-- Improving feature engineering through interaction terms.
+- Testing deep learning approaches for improved accuracy.
 
-- Enhancing the web application with real-time predictions.
+- Developing an interactive tool for users to input features and receive real-time price predictions.
 
 ## Conclusion
 This project demonstrates end-to-end data processing, from acquisition to predictive modeling. By integrating SQL, Python, Flask, and machine learning, we created an interactive tool that helps analyze housing trends and predict property prices accurately.
