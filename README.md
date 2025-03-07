@@ -83,26 +83,29 @@ Next, we can see how well our clustering works by visually inspecting the groupi
 
 ### Models
 
-Two models were run: a linear regression model to establish a basline, and a Gradient Boost model to try and improve on the baseline.
-The linear regression model performed well, with the following results:
+We developed two predictive models to estimate housing prices:
 
+1. **Linear Regression (Baseline Model)**
+Linear regression provides a simple, interpretable approach to understanding the relationship between property features and sale prices.
+
+**Performance Metrics:**
 * Training R-Squared: 0.9401
 * Testing R-Squared: 0.9397
 * Mean Squared Error: 0.0695
 
-Residuals on the model were thus:
-
+Residual Analysis: Residuals represent the difference between actual and predicted sale prices. A residual plot helps verify model assumptions and identify potential areas for improvement.
 
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/3d3991b7-f9a5-4ba6-a77d-6c0e096e8d79)
 
-
+2. **Gradient Boosting (Improved Model)**
 Gradient boosting slightly improved the results. We used cross-validation to determine the best hyperparamters.
 
+**Performance Metrics:**
 * Training R-Squared: 0.9676501961674518
 * Testing R-Squared: 0.9501703258657423
 * Mean Squared Error: 0.05743137013095087
 
-Residuals on the gradient boost model were:
+Residuals for the Gradient Boosting model indicate improved accuracy over the linear regression model.
 
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/8a3f9b03-0f9f-44ee-a5a5-6c8cc441e5ac)
 
