@@ -5,10 +5,14 @@ Conducted a comprehensive analysis using the Ames Housing dataset to develop a m
 
 This repo containst the following:
 * data folder: contains the dataset used for modeling
+  
 * graphs and plots folder: contains screenshots of our graphs, which are also represented in part below
+  
 * notebooks:
   * K-Means clustering and plots.ipynb: Clustering analysis
+    
   * Ames_Modeling.ipynb: Model development and evaluation (Google Colab)
+    
   * best_model.pkl: Saved final model
 
 ## Data Acquisition
@@ -16,32 +20,34 @@ We used the public Ames Housing dataset. This dataset is available on Kaggle and
 The data were cleaned and hosted on AWS S3 in a public bucket.
 
 ## Data Preparation
-Cleaning: Removed missing values and incomplete records.
+Cleaning: Removed missing values and incomplete records
 
-Transformation: Converted categorical variables into numerical formats for modeling.
+Transformation: Converted categorical variables into numerical formats for modeling
 
-Feature Engineering: Created new features based on existing data to improve model accuracy.
+Feature Engineering: Created new features based on existing data to improve model accuracy
 
-Clustering: Applied K-Means clustering to segment housing data into meaningful groups.
-#### Methods
+Clustering: Applied K-Means clustering to segment housing data into meaningful groups
 
-* Jupyter Notebook: modeling and clustering in Python
-* Tableau: data visualization analysis
-* AWS: hosting data
-* Python + Flask: app development
-* HTML, CSS, JS: webpage & user inputs
-
-## Predictions Models
+## Methods
+* Jupyter Notebook: Used for Python-based modeling and clustering
+* Tableau: Data visualization and analysis
+* AWS: Hosting data for easy access
+* Python + Flask: Web application development for serving predictions
+* HTML, CSS, JS: Created an interactive webpage for user inputs
 
 ## Data Analysis
-
-#### Tableau Visualizations
+### Tableau Visualizations
 
 https://public.tableau.com/app/profile/mary.hills/viz/AmesAmenitiesComparison/AmenitesComparison
 https://public.tableau.com/app/profile/mary.hills/viz/AmesHousingData_16929331848960/NeighborhoodData
 
-#### Features: Correlations & Clustering
+### Features: Correlations & Clustering
+- Related Features: Sale price showed strong correlations with square footage, total rooms, and overall quality.
 
+- Clustering: A K-Means elbow curve was used to determine the optimal number of clusters for segmentation.
+
+- Visual Analysis: Charts comparing sale price with living area, year built, overall quality, and condition.
+  
 ##### Related Features
 
 We see that there are strong correlations between intuitively related features such as total rooms and square footage.
