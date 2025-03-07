@@ -48,20 +48,20 @@ https://public.tableau.com/app/profile/mary.hills/viz/AmesHousingData_1692933184
 
 - Visual Analysis: Charts comparing sale price with living area, year built, overall quality, and condition.
   
-##### Related Features
+#### Related Features
 
 We see that there are strong correlations between intuitively related features such as total rooms and square footage.
 Our sale price target variable strongly correlates to features related to home size, as well as quality.
 
 ![correlation_heatmap_plot](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/74d74d67-7b1b-4757-a3b0-b0ae434b3cb1)
 
-##### Clustering: Cluster Count
+#### Clustering: Cluster Count
 
 We created a k-means elbow curve to find the "right" number of clusters to use in our analysis
 
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/d8fa5e81-b507-4c6e-97a2-45f3dfb8368a)
 
-##### Features that matter
+#### Features that matter
 
 Next, we can see how well our clustering works by visually inspecting the groupings
 
@@ -73,7 +73,7 @@ Next, we can see how well our clustering works by visually inspecting the groupi
 
 ![Sale Price vs Overall Condition](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/5a4ffc5c-20ad-4dc6-847c-211655788533)
 
-##### Features that might not matter
+#### Features that might not matter
 
 ![Mean Sale Price vs Neighborhood](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/9a58bb26-c49d-4527-88b0-9960e7596337)
 
@@ -81,7 +81,7 @@ Next, we can see how well our clustering works by visually inspecting the groupi
 
 ## Predictions: Machine Learning Model
 
-#### Models
+### Models
 
 Two models were run: a linear regression model to establish a basline, and a Gradient Boost model to try and improve on the baseline.
 The linear regression model performed well, with the following results:
@@ -106,25 +106,42 @@ Residuals on the gradient boost model were:
 
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/8a3f9b03-0f9f-44ee-a5a5-6c8cc441e5ac)
 
-#### Feature Importances
+### Feature Importances
 
 The model is dominated by features related to size and quality
 
 |Feature Names|Feature Importances|
 |---|---|
-|Overall Qual|0\.39272483495402866|
-|Total SF|0\.3568763700410612|
+|Overall Quality|0\.39272483495402866|
+|Total Square Footage|0\.3568763700410612|
 |Year Built|0\.045396744133224295|
-|Year Remod/Add|0\.022098346479286855|
-|Gr Liv Area|0\.0193034148646336|
-|Kitchen Qual\_TA|0\.017791286766306636|
+|Year Remodeled/Added|0\.022098346479286855|
+|Ground Living Area|0\.0193034148646336|
+|Kitchen Quality\_TA|0\.017791286766306636|
 |Garage Cars|0\.016039563131456474|
-|BsmtFin SF 1|0\.012385942230966514|
+|BsmtFin Square Footage 1|0\.012385942230966514|
 |Garage Area|0\.011932867284658226|
 |Lot Area|0\.011541017959086157|
 |Fireplaces|0\.009578511945560421|
-|Overall Cond|0\.007511069312884516|
+|Overall Condition|0\.007511069312884516|
 
 Additionally, we re-ran the model with CatBoost to use with model inferencing, and CatBoost gives us the following importances:
 
 ![image](https://github.com/gmitt98/Ames-Housing-ML/assets/11577627/87e83e14-2b1e-46a8-ba84-cb8b3da45fd2)
+
+## Challenges
+- Handling missing data without introducing bias.
+
+- Selecting the best features while avoiding multicollinearity.
+
+- Optimizing model performance without overfitting.
+
+## Future Improvements
+- Implementing more advanced models like XGBoost for better accuracy.
+
+- Improving feature engineering through interaction terms.
+
+- Enhancing the web application with real-time predictions.
+
+## Conclusion
+This project demonstrates end-to-end data processing, from acquisition to predictive modeling. By integrating SQL, Python, Flask, and machine learning, we created an interactive tool that helps analyze housing trends and predict property prices accurately.
